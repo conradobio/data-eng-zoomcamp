@@ -1,0 +1,29 @@
+[2023-03-23T10:59:35.181+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.bq_create_yellow_tripdata_partitioned_table manual__2023-03-23T10:54:32.222477+00:00 [queued]>
+[2023-03-23T10:59:35.188+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.bq_create_yellow_tripdata_partitioned_table manual__2023-03-23T10:54:32.222477+00:00 [queued]>
+[2023-03-23T10:59:35.188+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:59:35.188+0000] {taskinstance.py:1280} INFO - Starting attempt 2 of 2
+[2023-03-23T10:59:35.189+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:59:35.199+0000] {taskinstance.py:1300} INFO - Executing <Task(BigQueryInsertJobOperator): bq_create_yellow_tripdata_partitioned_table> on 2023-03-23 10:54:32.222477+00:00
+[2023-03-23T10:59:35.204+0000] {standard_task_runner.py:55} INFO - Started process 3488 to run task
+[2023-03-23T10:59:35.206+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'gcs_2_bq_dag', 'bq_create_yellow_tripdata_partitioned_table', 'manual__2023-03-23T10:54:32.222477+00:00', '--job-id', '1968', '--raw', '--subdir', 'DAGS_FOLDER/transfer_gcp_to_bq.py', '--cfg-path', '/tmp/tmpl00y1g4p']
+[2023-03-23T10:59:35.207+0000] {standard_task_runner.py:83} INFO - Job 1968: Subtask bq_create_yellow_tripdata_partitioned_table
+[2023-03-23T10:59:35.216+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-23T10:59:35.247+0000] {task_command.py:388} INFO - Running <TaskInstance: gcs_2_bq_dag.bq_create_yellow_tripdata_partitioned_table manual__2023-03-23T10:54:32.222477+00:00 [running]> on host 4b3eeaf199d3
+[2023-03-23T10:59:35.295+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=gcs_2_bq_dag
+AIRFLOW_CTX_TASK_ID=bq_create_yellow_tripdata_partitioned_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-23T10:54:32.222477+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-23T10:54:32.222477+00:00
+[2023-03-23T10:59:35.296+0000] {crypto.py:83} WARNING - empty cryptography key - values will not be stored encrypted.
+[2023-03-23T10:59:35.296+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-23T10:59:35.297+0000] {bigquery.py:2731} INFO - Executing: {'query': {'query': 'CREATE OR REPLACE TABLE trips_data_all.yellow_tripdata             PARTITION BY DATE(tpep_pickup_datetime)             AS             SELECT * FROM trips_data_all.yellow_tripdata_external_table;', 'useLegacySql': False}}'
+[2023-03-23T10:59:35.301+0000] {bigquery.py:1546} INFO - Inserting job ***_gcs_2_bq_dag_bq_create_yellow_tripdata_partitioned_table_2023_03_23T10_54_32_222477_00_00_7ebd0f20670b059d22ccbbf95f871288
+[2023-03-23T10:59:49.321+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=gcs_2_bq_dag, task_id=bq_create_yellow_tripdata_partitioned_table, execution_date=20230323T105432, start_date=20230323T105935, end_date=20230323T105949
+[2023-03-23T10:59:49.358+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-23T10:59:49.385+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

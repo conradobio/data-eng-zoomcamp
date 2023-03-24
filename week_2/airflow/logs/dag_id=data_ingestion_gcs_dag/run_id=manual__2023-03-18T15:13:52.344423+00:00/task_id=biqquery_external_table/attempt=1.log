@@ -1,0 +1,2 @@
+[2023-03-18T15:13:54.024+0000] {taskinstance.py:1077} INFO - Dependencies not met for <TaskInstance: data_ingestion_gcs_dag.biqquery_external_table manual__2023-03-18T15:13:52.344423+00:00 [queued]>, dependency 'Trigger Rule' FAILED: Task's trigger rule 'all_success' requires all upstream tasks to have succeeded, but found 1 non-success(es). upstream_states=_UpstreamTIStates(success=0, skipped=0, failed=0, upstream_failed=0, removed=0, done=0), upstream_task_ids={'local_to_gcs'}
+[2023-03-18T15:13:54.027+0000] {local_task_job.py:147} INFO - Task is not able to be run

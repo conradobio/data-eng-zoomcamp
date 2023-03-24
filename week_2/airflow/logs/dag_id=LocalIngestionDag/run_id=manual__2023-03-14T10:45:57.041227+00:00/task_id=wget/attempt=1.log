@@ -1,0 +1,37 @@
+[2023-03-14T10:45:58.404+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.wget manual__2023-03-14T10:45:57.041227+00:00 [queued]>
+[2023-03-14T10:45:58.415+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.wget manual__2023-03-14T10:45:57.041227+00:00 [queued]>
+[2023-03-14T10:45:58.416+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-14T10:45:58.416+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-03-14T10:45:58.416+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-14T10:45:58.436+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): wget> on 2023-03-14 10:45:57.041227+00:00
+[2023-03-14T10:45:58.442+0000] {standard_task_runner.py:55} INFO - Started process 730 to run task
+[2023-03-14T10:45:58.444+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'wget', 'manual__2023-03-14T10:45:57.041227+00:00', '--job-id', '1744', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmp3c7s8r6l']
+[2023-03-14T10:45:58.445+0000] {standard_task_runner.py:83} INFO - Job 1744: Subtask wget
+[2023-03-14T10:45:58.456+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-14T10:45:58.509+0000] {task_command.py:388} INFO - Running <TaskInstance: LocalIngestionDag.wget manual__2023-03-14T10:45:57.041227+00:00 [running]> on host 67d5ca07a279
+[2023-03-14T10:45:58.588+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=LocalIngestionDag
+AIRFLOW_CTX_TASK_ID=wget
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-14T10:45:57.041227+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-14T10:45:57.041227+00:00
+[2023-03-14T10:45:58.589+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-03-14T10:45:58.590+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz -O /opt/***/output.csv']
+[2023-03-14T10:45:58.603+0000] {subprocess.py:86} INFO - Output:
+[2023-03-14T10:45:58.607+0000] {subprocess.py:93} INFO - /bin/bash: wget: command not found
+[2023-03-14T10:45:58.607+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2023-03-14T10:45:58.620+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2023-03-14T10:45:58.627+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=LocalIngestionDag, task_id=wget, execution_date=20230314T104557, start_date=20230314T104558, end_date=20230314T104558
+[2023-03-14T10:45:58.645+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1744 for task wget (Bash command failed. The command returned a non-zero exit code 127.; 730)
+[2023-03-14T10:45:58.658+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-14T10:45:58.690+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

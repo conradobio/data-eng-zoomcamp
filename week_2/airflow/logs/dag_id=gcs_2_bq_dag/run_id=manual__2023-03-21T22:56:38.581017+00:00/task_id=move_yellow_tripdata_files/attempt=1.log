@@ -1,0 +1,31 @@
+[2023-03-21T23:01:52.474+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.move_yellow_tripdata_files manual__2023-03-21T22:56:38.581017+00:00 [queued]>
+[2023-03-21T23:01:52.484+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.move_yellow_tripdata_files manual__2023-03-21T22:56:38.581017+00:00 [queued]>
+[2023-03-21T23:01:52.485+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-21T23:01:52.485+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-03-21T23:01:52.485+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-21T23:01:52.501+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSToGCSOperator): move_yellow_tripdata_files> on 2023-03-21 22:56:38.581017+00:00
+[2023-03-21T23:01:52.507+0000] {standard_task_runner.py:55} INFO - Started process 8761 to run task
+[2023-03-21T23:01:52.510+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'gcs_2_bq_dag', 'move_yellow_tripdata_files', 'manual__2023-03-21T22:56:38.581017+00:00', '--job-id', '1910', '--raw', '--subdir', 'DAGS_FOLDER/transfer_gcp_to_bq.py', '--cfg-path', '/tmp/tmpnn8gll82']
+[2023-03-21T23:01:52.512+0000] {standard_task_runner.py:83} INFO - Job 1910: Subtask move_yellow_tripdata_files
+[2023-03-21T23:01:52.521+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-21T23:01:52.560+0000] {task_command.py:388} INFO - Running <TaskInstance: gcs_2_bq_dag.move_yellow_tripdata_files manual__2023-03-21T22:56:38.581017+00:00 [running]> on host 4b3eeaf199d3
+[2023-03-21T23:01:52.617+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=gcs_2_bq_dag
+AIRFLOW_CTX_TASK_ID=move_yellow_tripdata_files
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-21T22:56:38.581017+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-21T22:56:38.581017+00:00
+[2023-03-21T23:01:52.618+0000] {crypto.py:83} WARNING - empty cryptography key - values will not be stored encrypted.
+[2023-03-21T23:01:52.619+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-21T23:01:52.619+0000] {gcs_to_gcs.py:408} INFO - Delimiter ignored because wildcard is in prefix
+[2023-03-21T23:01:53.134+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/yellow_tripdata_2019-01.parquet to gs://dtc_data_lake_winged-vigil-379810/yellow/yellow_*tripdata_2019-01.parquet
+[2023-03-21T23:01:53.230+0000] {gcs.py:263} INFO - Total Bytes: 137625404 | Bytes Written: 137625404
+[2023-03-21T23:01:53.231+0000] {gcs.py:276} INFO - Object raw/yellow_tripdata_2019-01.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object yellow/yellow_*tripdata_2019-01.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-21T23:01:53.240+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=gcs_2_bq_dag, task_id=move_yellow_tripdata_files, execution_date=20230321T225638, start_date=20230321T230152, end_date=20230321T230153
+[2023-03-21T23:01:53.283+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-21T23:01:53.305+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

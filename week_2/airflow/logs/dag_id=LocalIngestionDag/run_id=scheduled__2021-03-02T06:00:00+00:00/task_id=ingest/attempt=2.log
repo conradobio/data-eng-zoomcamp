@@ -1,0 +1,83 @@
+[2023-03-17T11:16:52.844+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.ingest scheduled__2021-03-02T06:00:00+00:00 [queued]>
+[2023-03-17T11:16:52.850+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.ingest scheduled__2021-03-02T06:00:00+00:00 [queued]>
+[2023-03-17T11:16:52.850+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-17T11:16:52.850+0000] {taskinstance.py:1280} INFO - Starting attempt 2 of 2
+[2023-03-17T11:16:52.850+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-17T11:16:52.862+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): ingest> on 2021-03-02 06:00:00+00:00
+[2023-03-17T11:16:52.866+0000] {standard_task_runner.py:55} INFO - Started process 5147 to run task
+[2023-03-17T11:16:52.868+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'ingest', 'scheduled__2021-03-02T06:00:00+00:00', '--job-id', '1803', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmp2uqgqp6i']
+[2023-03-17T11:16:52.869+0000] {standard_task_runner.py:83} INFO - Job 1803: Subtask ingest
+[2023-03-17T11:16:52.878+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-17T11:16:52.890+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2023-03-17T11:16:52.910+0000] {task_command.py:388} INFO - Running <TaskInstance: LocalIngestionDag.ingest scheduled__2021-03-02T06:00:00+00:00 [running]> on host 846854af4045
+[2023-03-17T11:16:52.935+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-03-17T11:16:52.962+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=LocalIngestionDag
+AIRFLOW_CTX_TASK_ID=ingest
+AIRFLOW_CTX_EXECUTION_DATE=2021-03-02T06:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-03-02T06:00:00+00:00
+[2023-03-17T11:16:52.962+0000] {logging_mixin.py:137} INFO - yellow_tax_2021_03 /opt/***/output_2021-03.csv.gz 2021-03-02T06:00:00+00:00
+[2023-03-17T11:16:52.966+0000] {ingestion_script.py:12} INFO - connected to ny_taxi
+[2023-03-17T11:16:53.152+0000] {ingestion_script.py:16} INFO - df shape (100000, 18)
+[2023-03-17T11:16:53.153+0000] {ingestion_script.py:17} INFO - df columns Index(['VendorID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime',
+       'passenger_count', 'trip_distance', 'RatecodeID', 'store_and_fwd_flag',
+       'PULocationID', 'DOLocationID', 'payment_type', 'fare_amount', 'extra',
+       'mta_tax', 'tip_amount', 'tolls_amount', 'improvement_surcharge',
+       'total_amount', 'congestion_surcharge'],
+      dtype='object')
+[2023-03-17T11:16:53.179+0000] {ingestion_script.py:22} INFO - starting to ingest data
+[2023-03-17T11:17:00.482+0000] {ingestion_script.py:27} INFO - Insert the first chunk
+[2023-03-17T11:17:06.734+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.252 seconds
+[2023-03-17T11:17:13.863+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.128 seconds
+[2023-03-17T11:17:21.069+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.206 seconds
+[2023-03-17T11:17:28.275+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.206 seconds
+[2023-03-17T11:17:35.539+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.264 seconds
+[2023-03-17T11:17:42.167+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.629 seconds
+[2023-03-17T11:17:49.589+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.421 seconds
+[2023-03-17T11:17:56.162+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.573 seconds
+[2023-03-17T11:18:03.316+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.154 seconds
+[2023-03-17T11:18:10.239+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.923 seconds
+[2023-03-17T11:18:17.099+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.859 seconds
+[2023-03-17T11:18:24.488+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.389 seconds
+[2023-03-17T11:18:31.067+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.579 seconds
+[2023-03-17T11:18:38.278+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.211 seconds
+[2023-03-17T11:18:45.044+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.765 seconds
+[2023-03-17T11:18:51.928+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.884 seconds
+[2023-03-17T11:18:52.063+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:175: DtypeWarning: Columns (6) have mixed types.Specify dtype option on import or set low_memory=False.
+  return_value = self.execute_callable()
+
+[2023-03-17T11:18:59.302+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.374 seconds
+[2023-03-17T11:19:05.338+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.036 seconds
+[2023-03-17T11:19:06.793+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 1.455 seconds
+[2023-03-17T11:19:06.793+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingestion_script.py", line 31, in ingest_callable
+    df = next(df_iter)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1024, in __next__
+    return self.get_chunk()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1074, in get_chunk
+    return self.read(nrows=size)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1047, in read
+    index, columns, col_dict = self._engine.read(nrows)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 224, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 826, in pandas._libs.parsers.TextReader.read_low_memory
+StopIteration
+[2023-03-17T11:19:06.800+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=LocalIngestionDag, task_id=ingest, execution_date=20210302T060000, start_date=20230317T111652, end_date=20230317T111906
+[2023-03-17T11:19:06.809+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1803 for task ingest (; 5147)
+[2023-03-17T11:19:06.845+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-17T11:19:06.857+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

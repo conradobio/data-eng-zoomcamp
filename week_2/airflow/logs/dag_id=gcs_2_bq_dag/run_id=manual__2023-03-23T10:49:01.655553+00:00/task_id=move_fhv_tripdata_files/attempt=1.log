@@ -1,0 +1,99 @@
+[2023-03-23T10:49:03.003+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.move_fhv_tripdata_files manual__2023-03-23T10:49:01.655553+00:00 [queued]>
+[2023-03-23T10:49:03.011+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.move_fhv_tripdata_files manual__2023-03-23T10:49:01.655553+00:00 [queued]>
+[2023-03-23T10:49:03.012+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:49:03.012+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-03-23T10:49:03.012+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:49:03.025+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSToGCSOperator): move_fhv_tripdata_files> on 2023-03-23 10:49:01.655553+00:00
+[2023-03-23T10:49:03.029+0000] {standard_task_runner.py:55} INFO - Started process 2584 to run task
+[2023-03-23T10:49:03.032+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'gcs_2_bq_dag', 'move_fhv_tripdata_files', 'manual__2023-03-23T10:49:01.655553+00:00', '--job-id', '1954', '--raw', '--subdir', 'DAGS_FOLDER/transfer_gcp_to_bq.py', '--cfg-path', '/tmp/tmpbqkzem52']
+[2023-03-23T10:49:03.033+0000] {standard_task_runner.py:83} INFO - Job 1954: Subtask move_fhv_tripdata_files
+[2023-03-23T10:49:03.043+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-23T10:49:03.080+0000] {task_command.py:388} INFO - Running <TaskInstance: gcs_2_bq_dag.move_fhv_tripdata_files manual__2023-03-23T10:49:01.655553+00:00 [running]> on host 4b3eeaf199d3
+[2023-03-23T10:49:03.133+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=gcs_2_bq_dag
+AIRFLOW_CTX_TASK_ID=move_fhv_tripdata_files
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-23T10:49:01.655553+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-23T10:49:01.655553+00:00
+[2023-03-23T10:49:03.134+0000] {crypto.py:83} WARNING - empty cryptography key - values will not be stored encrypted.
+[2023-03-23T10:49:03.134+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-23T10:49:03.697+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-01.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-01.parquet
+[2023-03-23T10:49:03.780+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:03.781+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-01.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-01.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:03.781+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-02.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-02.parquet
+[2023-03-23T10:49:03.903+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:03.903+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-02.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-02.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:03.903+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-03.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-03.parquet
+[2023-03-23T10:49:03.973+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:03.973+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-03.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-03.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:03.974+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-04.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-04.parquet
+[2023-03-23T10:49:04.042+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.042+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-04.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-04.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.042+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-05.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-05.parquet
+[2023-03-23T10:49:04.121+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.121+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-05.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-05.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.121+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-06.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-06.parquet
+[2023-03-23T10:49:04.195+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.195+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-06.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-06.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.195+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-07.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-07.parquet
+[2023-03-23T10:49:04.288+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.289+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-07.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-07.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.289+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-08.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-08.parquet
+[2023-03-23T10:49:04.378+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.378+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-08.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-08.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.378+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-09.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-09.parquet
+[2023-03-23T10:49:04.454+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.455+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-09.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-09.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.455+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-10.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-10.parquet
+[2023-03-23T10:49:04.517+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.517+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-10.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-10.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.517+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-11.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-11.parquet
+[2023-03-23T10:49:04.581+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.582+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-11.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-11.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.582+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2019-12.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2019-12.parquet
+[2023-03-23T10:49:04.651+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.652+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2019-12.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2019-12.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.652+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-01.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-01.parquet
+[2023-03-23T10:49:04.709+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.709+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-01.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-01.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.709+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-02.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-02.parquet
+[2023-03-23T10:49:04.776+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.777+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-02.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-02.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.777+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-03.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-03.parquet
+[2023-03-23T10:49:04.870+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.870+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-03.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-03.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.871+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-04.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-04.parquet
+[2023-03-23T10:49:04.967+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.967+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-04.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-04.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.967+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-05.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-05.parquet
+[2023-03-23T10:49:05.043+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.043+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-05.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-05.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.043+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-06.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-06.parquet
+[2023-03-23T10:49:05.121+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.121+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-06.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-06.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.121+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-07.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-07.parquet
+[2023-03-23T10:49:05.204+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.204+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-07.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-07.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.204+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-08.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-08.parquet
+[2023-03-23T10:49:05.275+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.275+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-08.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-08.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.275+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-09.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-09.parquet
+[2023-03-23T10:49:05.343+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.343+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-09.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-09.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.343+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-10.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-10.parquet
+[2023-03-23T10:49:05.451+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.451+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-10.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-10.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.452+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-11.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-11.parquet
+[2023-03-23T10:49:05.556+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.556+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-11.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-11.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.556+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/fhv/fhv_tripdata_2020-12.parquet to gs://dtc_data_lake_winged-vigil-379810/fhv/fhv/fhv_tripdata_2020-12.parquet
+[2023-03-23T10:49:05.654+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.655+0000] {gcs.py:276} INFO - Object raw/fhv/fhv_tripdata_2020-12.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object fhv/fhv/fhv_tripdata_2020-12.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.673+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=gcs_2_bq_dag, task_id=move_fhv_tripdata_files, execution_date=20230323T104901, start_date=20230323T104903, end_date=20230323T104905
+[2023-03-23T10:49:05.732+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-23T10:49:05.756+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

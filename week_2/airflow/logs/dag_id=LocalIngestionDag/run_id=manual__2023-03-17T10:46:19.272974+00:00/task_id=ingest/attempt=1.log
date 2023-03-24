@@ -1,0 +1,42 @@
+[2023-03-17T10:46:21.403+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.ingest manual__2023-03-17T10:46:19.272974+00:00 [queued]>
+[2023-03-17T10:46:21.409+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.ingest manual__2023-03-17T10:46:19.272974+00:00 [queued]>
+[2023-03-17T10:46:21.410+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-17T10:46:21.410+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-03-17T10:46:21.410+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-17T10:46:21.421+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): ingest> on 2023-03-17 10:46:19.272974+00:00
+[2023-03-17T10:46:21.425+0000] {standard_task_runner.py:55} INFO - Started process 2573 to run task
+[2023-03-17T10:46:21.427+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'ingest', 'manual__2023-03-17T10:46:19.272974+00:00', '--job-id', '1780', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmpw559qud9']
+[2023-03-17T10:46:21.428+0000] {standard_task_runner.py:83} INFO - Job 1780: Subtask ingest
+[2023-03-17T10:46:21.438+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-17T10:46:21.474+0000] {task_command.py:388} INFO - Running <TaskInstance: LocalIngestionDag.ingest manual__2023-03-17T10:46:19.272974+00:00 [running]> on host 846854af4045
+[2023-03-17T10:46:21.506+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-03-17T10:46:21.537+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=LocalIngestionDag
+AIRFLOW_CTX_TASK_ID=ingest
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-17T10:46:19.272974+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-17T10:46:19.272974+00:00
+[2023-03-17T10:46:21.538+0000] {logging_mixin.py:137} INFO - yellow_tax_2023_03 /opt/***/output_2023-03.csv 2023-03-17T10:46:19.272974+00:00
+[2023-03-17T10:46:21.541+0000] {ingestion_script.py:12} INFO - connected to ny_taxi
+[2023-03-17T10:46:21.549+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingestion_script.py", line 16, in ingest_callable
+    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 5487, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'tpep_pickup_datetime'
+[2023-03-17T10:46:21.557+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=LocalIngestionDag, task_id=ingest, execution_date=20230317T104619, start_date=20230317T104621, end_date=20230317T104621
+[2023-03-17T10:46:21.566+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1780 for task ingest ('DataFrame' object has no attribute 'tpep_pickup_datetime'; 2573)
+[2023-03-17T10:46:21.599+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-17T10:46:21.623+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

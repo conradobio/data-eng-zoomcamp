@@ -1,0 +1,31 @@
+[2023-03-14T11:03:42.520+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.wget manual__2023-03-14T11:03:41.556236+00:00 [queued]>
+[2023-03-14T11:03:42.528+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.wget manual__2023-03-14T11:03:41.556236+00:00 [queued]>
+[2023-03-14T11:03:42.529+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-14T11:03:42.529+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-03-14T11:03:42.529+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-14T11:03:42.540+0000] {taskinstance.py:1300} INFO - Executing <Task(BashOperator): wget> on 2023-03-14 11:03:41.556236+00:00
+[2023-03-14T11:03:42.544+0000] {standard_task_runner.py:55} INFO - Started process 2191 to run task
+[2023-03-14T11:03:42.547+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'wget', 'manual__2023-03-14T11:03:41.556236+00:00', '--job-id', '1749', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmpg58eso5e']
+[2023-03-14T11:03:42.548+0000] {standard_task_runner.py:83} INFO - Job 1749: Subtask wget
+[2023-03-14T11:03:42.557+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-14T11:03:42.593+0000] {task_command.py:388} INFO - Running <TaskInstance: LocalIngestionDag.wget manual__2023-03-14T11:03:41.556236+00:00 [running]> on host 67d5ca07a279
+[2023-03-14T11:03:42.649+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=LocalIngestionDag
+AIRFLOW_CTX_TASK_ID=wget
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-14T11:03:41.556236+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-14T11:03:41.556236+00:00
+[2023-03-14T11:03:42.651+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-03-14T11:03:42.652+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo "{ ds }" "{ execution_data}"']
+[2023-03-14T11:03:42.661+0000] {subprocess.py:86} INFO - Output:
+[2023-03-14T11:03:42.666+0000] {subprocess.py:93} INFO - { ds } { execution_data}
+[2023-03-14T11:03:42.667+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-03-14T11:03:42.686+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=LocalIngestionDag, task_id=wget, execution_date=20230314T110341, start_date=20230314T110342, end_date=20230314T110342
+[2023-03-14T11:03:42.718+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-14T11:03:42.745+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

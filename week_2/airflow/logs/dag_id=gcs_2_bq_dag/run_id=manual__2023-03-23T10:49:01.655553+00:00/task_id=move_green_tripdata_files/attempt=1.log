@@ -1,0 +1,99 @@
+[2023-03-23T10:49:03.002+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.move_green_tripdata_files manual__2023-03-23T10:49:01.655553+00:00 [queued]>
+[2023-03-23T10:49:03.011+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.move_green_tripdata_files manual__2023-03-23T10:49:01.655553+00:00 [queued]>
+[2023-03-23T10:49:03.011+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:49:03.011+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-03-23T10:49:03.011+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:49:03.023+0000] {taskinstance.py:1300} INFO - Executing <Task(GCSToGCSOperator): move_green_tripdata_files> on 2023-03-23 10:49:01.655553+00:00
+[2023-03-23T10:49:03.028+0000] {standard_task_runner.py:55} INFO - Started process 2583 to run task
+[2023-03-23T10:49:03.031+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'gcs_2_bq_dag', 'move_green_tripdata_files', 'manual__2023-03-23T10:49:01.655553+00:00', '--job-id', '1953', '--raw', '--subdir', 'DAGS_FOLDER/transfer_gcp_to_bq.py', '--cfg-path', '/tmp/tmpv48_8tqa']
+[2023-03-23T10:49:03.032+0000] {standard_task_runner.py:83} INFO - Job 1953: Subtask move_green_tripdata_files
+[2023-03-23T10:49:03.042+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-23T10:49:03.080+0000] {task_command.py:388} INFO - Running <TaskInstance: gcs_2_bq_dag.move_green_tripdata_files manual__2023-03-23T10:49:01.655553+00:00 [running]> on host 4b3eeaf199d3
+[2023-03-23T10:49:03.136+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=gcs_2_bq_dag
+AIRFLOW_CTX_TASK_ID=move_green_tripdata_files
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-23T10:49:01.655553+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-23T10:49:01.655553+00:00
+[2023-03-23T10:49:03.137+0000] {crypto.py:83} WARNING - empty cryptography key - values will not be stored encrypted.
+[2023-03-23T10:49:03.138+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-23T10:49:03.927+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-01.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-01.parquet
+[2023-03-23T10:49:04.004+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.004+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-01.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-01.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.004+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-02.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-02.parquet
+[2023-03-23T10:49:04.092+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.093+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-02.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-02.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.093+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-03.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-03.parquet
+[2023-03-23T10:49:04.169+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.170+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-03.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-03.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.170+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-04.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-04.parquet
+[2023-03-23T10:49:04.247+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.247+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-04.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-04.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.248+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-05.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-05.parquet
+[2023-03-23T10:49:04.313+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.314+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-05.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-05.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.314+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-06.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-06.parquet
+[2023-03-23T10:49:04.390+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.390+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-06.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-06.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.390+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-07.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-07.parquet
+[2023-03-23T10:49:04.460+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.460+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-07.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-07.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.461+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-08.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-08.parquet
+[2023-03-23T10:49:04.535+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.535+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-08.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-08.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.535+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-09.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-09.parquet
+[2023-03-23T10:49:04.610+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.610+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-09.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-09.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.610+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-10.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-10.parquet
+[2023-03-23T10:49:04.674+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.674+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-10.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-10.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.674+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-11.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-11.parquet
+[2023-03-23T10:49:04.734+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.735+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-11.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-11.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.735+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2019-12.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2019-12.parquet
+[2023-03-23T10:49:04.832+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.832+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2019-12.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2019-12.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.832+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-01.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-01.parquet
+[2023-03-23T10:49:04.934+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:04.934+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-01.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-01.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:04.934+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-02.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-02.parquet
+[2023-03-23T10:49:05.035+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.035+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-02.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-02.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.035+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-03.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-03.parquet
+[2023-03-23T10:49:05.102+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.102+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-03.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-03.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.102+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-04.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-04.parquet
+[2023-03-23T10:49:05.186+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.186+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-04.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-04.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.187+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-05.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-05.parquet
+[2023-03-23T10:49:05.259+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.260+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-05.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-05.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.260+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-06.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-06.parquet
+[2023-03-23T10:49:05.331+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.331+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-06.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-06.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.331+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-07.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-07.parquet
+[2023-03-23T10:49:05.428+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.428+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-07.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-07.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.428+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-08.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-08.parquet
+[2023-03-23T10:49:05.523+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.523+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-08.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-08.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.523+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-09.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-09.parquet
+[2023-03-23T10:49:05.624+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.624+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-09.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-09.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.625+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-10.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-10.parquet
+[2023-03-23T10:49:05.731+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.731+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-10.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-10.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.732+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-11.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-11.parquet
+[2023-03-23T10:49:05.818+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.818+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-11.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-11.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.818+0000] {gcs_to_gcs.py:475} INFO - Executing copy of gs://dtc_data_lake_winged-vigil-379810/raw/green/green_tripdata_2020-12.parquet to gs://dtc_data_lake_winged-vigil-379810/green/green/green_tripdata_2020-12.parquet
+[2023-03-23T10:49:05.880+0000] {gcs.py:263} INFO - Total Bytes: 2259 | Bytes Written: 2259
+[2023-03-23T10:49:05.880+0000] {gcs.py:276} INFO - Object raw/green/green_tripdata_2020-12.parquet in bucket dtc_data_lake_winged-vigil-379810 rewritten to object green/green/green_tripdata_2020-12.parquet in bucket dtc_data_lake_winged-vigil-379810
+[2023-03-23T10:49:05.892+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=gcs_2_bq_dag, task_id=move_green_tripdata_files, execution_date=20230323T104901, start_date=20230323T104903, end_date=20230323T104905
+[2023-03-23T10:49:05.931+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-03-23T10:49:05.967+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,27 @@
+[2023-03-18T14:49:34.092+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.format_to_parquet manual__2023-03-18T14:49:04.678757+00:00 [queued]>
+[2023-03-18T14:49:34.099+0000] {taskinstance.py:1084} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.format_to_parquet manual__2023-03-18T14:49:04.678757+00:00 [queued]>
+[2023-03-18T14:49:34.100+0000] {taskinstance.py:1282} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18T14:49:34.100+0000] {taskinstance.py:1283} INFO - Starting attempt 1 of 1
+[2023-03-18T14:49:34.100+0000] {taskinstance.py:1284} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18T14:49:34.108+0000] {taskinstance.py:1303} INFO - Executing <Task(PythonOperator): format_to_parquet> on 2023-03-18 14:49:04.678757+00:00
+[2023-03-18T14:49:34.114+0000] {standard_task_runner.py:55} INFO - Started process 219 to run task
+[2023-03-18T14:49:34.116+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'format_to_parquet', 'manual__2023-03-18T14:49:04.678757+00:00', '--job-id', '1862', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_script_gcp.py', '--cfg-path', '/tmp/tmp8ruhobn5']
+[2023-03-18T14:49:34.117+0000] {standard_task_runner.py:83} INFO - Job 1862: Subtask format_to_parquet
+[2023-03-18T14:49:34.126+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:250: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-18T14:49:34.159+0000] {task_command.py:388} INFO - Running <TaskInstance: data_ingestion_gcs_dag.format_to_parquet manual__2023-03-18T14:49:04.678757+00:00 [running]> on host 2b20a007faea
+[2023-03-18T14:49:34.211+0000] {taskinstance.py:1511} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag
+AIRFLOW_CTX_TASK_ID=format_to_parquet
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-18T14:49:04.678757+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-18T14:49:04.678757+00:00
+[2023-03-18T14:49:34.212+0000] {ingestion_script_gcp.py:29} INFO - file name: /opt/***/yellow_tripdata_2019-01.csv.gz
+[2023-03-18T14:49:40.338+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-03-18T14:49:40.455+0000] {taskinstance.py:1326} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=format_to_parquet, execution_date=20230318T144904, start_date=20230318T144934, end_date=20230318T144940
+[2023-03-18T14:49:40.717+0000] {local_task_job.py:212} INFO - Task exited with return code 0
+[2023-03-18T14:49:40.779+0000] {taskinstance.py:2585} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,77 @@
+[2023-03-17T11:09:30.913+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.ingest scheduled__2021-01-02T06:00:00+00:00 [queued]>
+[2023-03-17T11:09:30.920+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: LocalIngestionDag.ingest scheduled__2021-01-02T06:00:00+00:00 [queued]>
+[2023-03-17T11:09:30.920+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-17T11:09:30.920+0000] {taskinstance.py:1280} INFO - Starting attempt 5 of 5
+[2023-03-17T11:09:30.920+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-17T11:09:30.931+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): ingest> on 2021-01-02 06:00:00+00:00
+[2023-03-17T11:09:30.935+0000] {standard_task_runner.py:55} INFO - Started process 4537 to run task
+[2023-03-17T11:09:30.937+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'LocalIngestionDag', 'ingest', 'scheduled__2021-01-02T06:00:00+00:00', '--job-id', '1799', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmpwjm4f7me']
+[2023-03-17T11:09:30.938+0000] {standard_task_runner.py:83} INFO - Job 1799: Subtask ingest
+[2023-03-17T11:09:30.946+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-17T11:09:30.959+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/sqlalchemy.py:124: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  return not conf.get("database", "sql_alchemy_conn").startswith("mssql")
+
+[2023-03-17T11:09:30.977+0000] {task_command.py:388} INFO - Running <TaskInstance: LocalIngestionDag.ingest scheduled__2021-01-02T06:00:00+00:00 [running]> on host 846854af4045
+[2023-03-17T11:09:31.000+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:205: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2023-03-17T11:09:31.027+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=LocalIngestionDag
+AIRFLOW_CTX_TASK_ID=ingest
+AIRFLOW_CTX_EXECUTION_DATE=2021-01-02T06:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=5
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-01-02T06:00:00+00:00
+[2023-03-17T11:09:31.028+0000] {logging_mixin.py:137} INFO - yellow_tax_2021_01 /opt/***/output_2021-01.csv.gz 2021-01-02T06:00:00+00:00
+[2023-03-17T11:09:31.031+0000] {ingestion_script.py:12} INFO - connected to ny_taxi
+[2023-03-17T11:09:31.193+0000] {ingestion_script.py:16} INFO - df shape (100000, 18)
+[2023-03-17T11:09:31.194+0000] {ingestion_script.py:17} INFO - df columns Index(['VendorID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime',
+       'passenger_count', 'trip_distance', 'RatecodeID', 'store_and_fwd_flag',
+       'PULocationID', 'DOLocationID', 'payment_type', 'fare_amount', 'extra',
+       'mta_tax', 'tip_amount', 'tolls_amount', 'improvement_surcharge',
+       'total_amount', 'congestion_surcharge'],
+      dtype='object')
+[2023-03-17T11:09:31.221+0000] {ingestion_script.py:22} INFO - starting to ingest data
+[2023-03-17T11:09:38.783+0000] {ingestion_script.py:27} INFO - Insert the first chunk
+[2023-03-17T11:09:45.280+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.497 seconds
+[2023-03-17T11:09:52.407+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.127 seconds
+[2023-03-17T11:09:59.895+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.488 seconds
+[2023-03-17T11:10:06.847+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.952 seconds
+[2023-03-17T11:10:15.876+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 9.029 seconds
+[2023-03-17T11:10:22.723+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.846 seconds
+[2023-03-17T11:10:30.092+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.369 seconds
+[2023-03-17T11:10:37.076+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 6.984 seconds
+[2023-03-17T11:10:44.536+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.459 seconds
+[2023-03-17T11:10:52.146+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.610 seconds
+[2023-03-17T11:10:59.219+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.073 seconds
+[2023-03-17T11:10:59.388+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/operators/python.py:175: DtypeWarning: Columns (6) have mixed types.Specify dtype option on import or set low_memory=False.
+  return_value = self.execute_callable()
+
+[2023-03-17T11:11:06.672+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 7.453 seconds
+[2023-03-17T11:11:11.019+0000] {ingestion_script.py:37} INFO - inserted another chunk...., took 4.347 seconds
+[2023-03-17T11:11:11.019+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 192, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/ingestion_script.py", line 31, in ingest_callable
+    df = next(df_iter)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1024, in __next__
+    return self.get_chunk()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1074, in get_chunk
+    return self.read(nrows=size)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1047, in read
+    index, columns, col_dict = self._engine.read(nrows)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 224, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 826, in pandas._libs.parsers.TextReader.read_low_memory
+StopIteration
+[2023-03-17T11:11:11.027+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=LocalIngestionDag, task_id=ingest, execution_date=20210102T060000, start_date=20230317T110930, end_date=20230317T111111
+[2023-03-17T11:11:11.042+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1799 for task ingest (; 4537)
+[2023-03-17T11:11:11.080+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-17T11:11:11.097+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

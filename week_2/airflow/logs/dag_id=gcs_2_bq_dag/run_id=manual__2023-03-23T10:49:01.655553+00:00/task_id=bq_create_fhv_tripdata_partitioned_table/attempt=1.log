@@ -1,0 +1,59 @@
+[2023-03-23T10:49:10.345+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.bq_create_fhv_tripdata_partitioned_table manual__2023-03-23T10:49:01.655553+00:00 [queued]>
+[2023-03-23T10:49:10.354+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: gcs_2_bq_dag.bq_create_fhv_tripdata_partitioned_table manual__2023-03-23T10:49:01.655553+00:00 [queued]>
+[2023-03-23T10:49:10.354+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:49:10.354+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2023-03-23T10:49:10.355+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-23T10:49:10.366+0000] {taskinstance.py:1300} INFO - Executing <Task(BigQueryInsertJobOperator): bq_create_fhv_tripdata_partitioned_table> on 2023-03-23 10:49:01.655553+00:00
+[2023-03-23T10:49:10.372+0000] {standard_task_runner.py:55} INFO - Started process 2612 to run task
+[2023-03-23T10:49:10.375+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'gcs_2_bq_dag', 'bq_create_fhv_tripdata_partitioned_table', 'manual__2023-03-23T10:49:01.655553+00:00', '--job-id', '1957', '--raw', '--subdir', 'DAGS_FOLDER/transfer_gcp_to_bq.py', '--cfg-path', '/tmp/tmp49yqotkd']
+[2023-03-23T10:49:10.376+0000] {standard_task_runner.py:83} INFO - Job 1957: Subtask bq_create_fhv_tripdata_partitioned_table
+[2023-03-23T10:49:10.385+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.7/site-packages/***/settings.py:249: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2023-03-23T10:49:10.423+0000] {task_command.py:388} INFO - Running <TaskInstance: gcs_2_bq_dag.bq_create_fhv_tripdata_partitioned_table manual__2023-03-23T10:49:01.655553+00:00 [running]> on host 4b3eeaf199d3
+[2023-03-23T10:49:10.492+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=gcs_2_bq_dag
+AIRFLOW_CTX_TASK_ID=bq_create_fhv_tripdata_partitioned_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-23T10:49:01.655553+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-23T10:49:01.655553+00:00
+[2023-03-23T10:49:10.493+0000] {crypto.py:83} WARNING - empty cryptography key - values will not be stored encrypted.
+[2023-03-23T10:49:10.493+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-03-23T10:49:10.494+0000] {bigquery.py:2731} INFO - Executing: {'query': {'query': 'CREATE OR REPLACE TABLE trips_data_all.fhv_tripdata             PARTITION BY DATE(Pickup_datetime)             AS             SELECT * FROM trips_data_all.fhv_tripdata_external_table;', 'useLegacySql': False}}'
+[2023-03-23T10:49:10.499+0000] {bigquery.py:1546} INFO - Inserting job ***_gcs_2_bq_dag_bq_create_fhv_tripdata_partitioned_table_2023_03_23T10_49_01_655553_00_00_094f2423c8d4ee6a83bd8cdc4f49ec04
+[2023-03-23T10:49:11.846+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2782, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1447, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/query.py", line 1437, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/cloud/bigquery/job/base.py", line 727, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/google/api_core/future/polling.py", line 137, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Unrecognized name: Pickup_datetime at [1:83]
+
+(job ID: airflow_gcs_2_bq_dag_bq_create_fhv_tripdata_partitioned_table_2023_03_23T10_49_01_655553_00_00_094f2423c8d4ee6a83bd8cdc4f49ec04)
+
+                                                                              -----Query Job SQL Follows-----                                                                               
+
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+   1:CREATE OR REPLACE TABLE trips_data_all.fhv_tripdata             PARTITION BY DATE(Pickup_datetime)             AS             SELECT * FROM trips_data_all.fhv_tripdata_external_table;
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+[2023-03-23T10:49:11.868+0000] {taskinstance.py:1323} INFO - Marking task as UP_FOR_RETRY. dag_id=gcs_2_bq_dag, task_id=bq_create_fhv_tripdata_partitioned_table, execution_date=20230323T104901, start_date=20230323T104910, end_date=20230323T104911
+[2023-03-23T10:49:11.890+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 1957 for task bq_create_fhv_tripdata_partitioned_table (400 Unrecognized name: Pickup_datetime at [1:83]
+
+(job ID: airflow_gcs_2_bq_dag_bq_create_fhv_tripdata_partitioned_table_2023_03_23T10_49_01_655553_00_00_094f2423c8d4ee6a83bd8cdc4f49ec04)
+
+                                                                              -----Query Job SQL Follows-----                                                                               
+
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+   1:CREATE OR REPLACE TABLE trips_data_all.fhv_tripdata             PARTITION BY DATE(Pickup_datetime)             AS             SELECT * FROM trips_data_all.fhv_tripdata_external_table;
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |; 2612)
+[2023-03-23T10:49:11.911+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-03-23T10:49:11.925+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
